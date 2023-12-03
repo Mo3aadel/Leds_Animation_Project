@@ -1,0 +1,2 @@
+"Generated Binary: Application.elf Generation Time: Sun 12/03/2023 12:24:59.97" 
+"Generated Binary: Application.hex Generation Time: Sun 12/03/2023 12:25:00.10" 

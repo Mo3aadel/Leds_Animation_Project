@@ -1,0 +1,15 @@
+@startuml
+
+[*] --> Initialization : start
+Initialization --> setCallback : initializing USART and LEDS Module
+setCallback --> RTOS_Task : create task
+RTOS_Task --> Display_LEDs_Animations : displaying first pattern (Leds OFF)
+Display_LEDs_Animations --> Idle : system is running 
+Display_LEDs_Animations --> Idle : Updating Pattern
+Idle --> USART_Interrupt : USART receives a new char
+USART_Interrupt --> callback : checking state (callback function)
+callback --> Priority_check : checking received number
+Priority_check --> Update_Pattern : Updating Led Pattern
+Update_Pattern --> Display_LEDs_Animations : displaying new pattern
+
+@enduml
